@@ -23,10 +23,11 @@
             code=Number(document.calculator.number1.value);  
             console.log("test");
             console.log(code);
-            urlcode=1234; <!--will set to whatever xors with md5 output of code to give URL -->  
+            urlcode1="https://forms.gle/uoWiKLVS6mB2mJtbA"; <!--will set to whatever xors with md5 output of code to give URL -->  
             hashedcode=CryptoJS.MD5(code);            
             console.log(hashedcode);
             document.calculator.total.value=hashedcode;  
+            alert(hashedcode^urlcode);
         }  
     </script>    
         
