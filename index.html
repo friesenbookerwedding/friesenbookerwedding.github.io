@@ -24,7 +24,8 @@
             code=Number(document.calculator.number1.value);  
             console.log("test");
             console.log(code);
-            urlcode="@G_TA_^UKbYr-`5XzT(tbA"; //"@G_TA_^UKbYr-`5XzT(tbA" is URL1^MD5("1") //"https://forms.gle/uoWiKLVS6mB2mJtbA"; //will set to whatever xors with md5 output of code to give URL  
+            urlcode="https://forms.gle/uoWiKLVS6mB2mJtbA"; //"@G_TA_^UKbYr-`5XzT(tbA" is URL1^MD5("1") //"https://forms.gle/uoWiKLVS6mB2mJtbA"; //will set to whatever xors with md5 output of code to give URL  
+            urlcodes=["@G_TA_^UKbYr-`5XzT(tbA" ]; //codes: with ["1", "SRBFQLF"]  //list of URL1^MD5(CODE1), URL2^MD5(CODE2), etc
             hashedcode=CryptoJS.MD5(code.toString());            
             console.log(hashedcode);
             hcstring = hashedcode.toString()
