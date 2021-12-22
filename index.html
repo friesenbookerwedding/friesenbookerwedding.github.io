@@ -232,6 +232,13 @@
 
             return temp.toLowerCase();
         };
+        
+        function checkcode(){  
+            code=Number(document.calculator.number1.value);  
+            urlcode=1234; <!--will set to whatever xors with md5 output of code to give URL -->  
+            hashedcode=MD5(code);  
+            document.calculator.total.value=hashedcode;  
+        }  
     </script>    
         
     <script language="javascript" type="text/javascript">  
@@ -280,14 +287,14 @@
     </script>  
     
           
-    <script language="javascript" type="text/javascript">  
+    <!--<script language="javascript" type="text/javascript">  
     function checkcode(){  
     code=Number(document.calculator.number1.value);  
     urlcode=1234; <!--will set to whatever xors with md5 output of code to give URL -->  
     hashedcode=MD5(code);  
     document.calculator.total.value=hashedcode;  
     }  
-    </script>  
+    </script>  -->
         
         
     </head>  
