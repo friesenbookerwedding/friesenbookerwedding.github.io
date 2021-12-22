@@ -21,7 +21,7 @@
 
         
         function checkcode(){  
-            code=Number(document.calculator.number1.value);  
+            code=document.calculator.number1.value; //Number(document.calculator.number1.value);  
             console.log("test");
             console.log(code);
             urlcode="https://forms.gle/uoWiKLVS6mB2mJtbA"; //"@G_TA_^UKbYr-`5XzT(tbA" is URL1^MD5("1") //"https://forms.gle/uoWiKLVS6mB2mJtbA"; //will set to whatever xors with md5 output of code to give URL  
