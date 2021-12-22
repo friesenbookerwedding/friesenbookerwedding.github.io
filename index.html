@@ -36,7 +36,7 @@
             urlcodes=["MGUJXFJ^]A\2.t5bUpP^|tbA", "QFNP_C	CWTSKnV\A0*nRPEv7", "https://docs.google.com/forms/d/e/1FAIpQLSchrjTHY9sCghXX5e511f1-TbnUZWcx1wKJ69SJF4zLdeR6Zw/viewform?usp=pp_url" ]; //codes: with [URL1 "SRBFQLF", URL2 "SFRQBLF"]  //list of URL1^MD5(CODE1), URL2^MD5(CODE2), etc
             hashedcode=CryptoJS.MD5(code.toString());
             console.log(hashedcode);
-            hcstring = hashedcode.toString(16) //16 should mean hex
+            hcstring = hashedcode.toString() 
             console.log(hcstring)
             //xorout = String.fromCharCode(hcstring.charCodeAt(0) ^ urlcode.charCodeAt(0)); //first char only
             //var urlclength = urlcode.length;
@@ -45,13 +45,18 @@
               xorout += String.fromCharCode(hcstring.charCodeAt(i) ^ urlcode.charCodeAt(i));
               console.log(xorout);
             }*/
+            goodurl=""
             console.log("xor outs:")
             for(var k=0; k<urlcodes.length; k++){
               thisxorout = stringxor(hcstring,urlcodes[k])
               console.log(thisxorout)
+              console.log(thisxorout.slice(0,8))
+              if (thisxorout.slice(0,8)==="https://"){ //this is the url to return
+                goodurl=thisxorout;
+              }
             }
             xorout = stringxor(hcstring,urlcode)
-            //console.log(xorout);
+            console.log(goodurl);
             document.calculator.total.value=xorout;  //maybe switch to hex to represent this info
             //alert(xorout);
         }  
