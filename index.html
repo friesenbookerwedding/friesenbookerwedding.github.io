@@ -32,8 +32,8 @@
             code=document.calculator.number1.value; //Number(document.calculator.number1.value);  
             console.log("test");
             console.log(code);
-            urlcode="https://forms.gle/zYfj9wUsK4V4hhEv7"; //"@G_TA_^UKbYr-`5XzT(tbA" is URL1^MD5("1") //"https://forms.gle/uoWiKLVS6mB2mJtbA" url1; //will set to whatever xors with md5 output of code to give URL  
-            urlcodes=["MGUJXFJ^]A\2.t5bUpP^|tbA" ]; //codes: with [URL1 "SRBFQLF", URL2 "SFRQBLF"]  //list of URL1^MD5(CODE1), URL2^MD5(CODE2), etc
+            urlcode="https://forms.gle/zYfj9wUsK4V4hhEv7"; //"@G_TA_^UKbYr-`5XzT(tbA" is URL1^MD5("1") //"https://forms.gle/uoWiKLVS6mB2mJtbA" url1; //"https://forms.gle/zYfj9wUsK4V4hhEv7" url2
+            urlcodes=["MGUJXFJ^]A\2.t5bUpP^|tbA", "QFNP_C	CWTSKnV\A0*nRPEv7", "https://forms.gle/zYfj9wUsK4V4hhEv7" ]; //codes: with [URL1 "SRBFQLF", URL2 "SFRQBLF"]  //list of URL1^MD5(CODE1), URL2^MD5(CODE2), etc
             hashedcode=CryptoJS.MD5(code.toString());            
             console.log(hashedcode);
             hcstring = hashedcode.toString()
@@ -45,8 +45,13 @@
               xorout += String.fromCharCode(hcstring.charCodeAt(i) ^ urlcode.charCodeAt(i));
               console.log(xorout);
             }*/
+            console.log("xor outs:")
+            for(var k=0; k<urlcodes.length; k++){
+              thisxorout = stringxor(hcstring,urlcodes[k])
+              console.log(thisxorout)
+            }
             xorout = stringxor(hcstring,urlcode)
-            console.log(xorout);
+            //console.log(xorout);
             document.calculator.total.value=xorout;  
             //alert(xorout);
         }  
