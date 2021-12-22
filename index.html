@@ -34,9 +34,9 @@
             console.log(code);
             urlcode="https://forms.gle/zYfj9wUsK4V4hhEv7"; //"@G_TA_^UKbYr-`5XzT(tbA" is URL1^MD5("1") //"https://forms.gle/uoWiKLVS6mB2mJtbA" url1; //"https://forms.gle/zYfj9wUsK4V4hhEv7" url2
             urlcodes=["MGUJXFJ^]A\2.t5bUpP^|tbA", "QFNP_C	CWTSKnV\A0*nRPEv7", "https://docs.google.com/forms/d/e/1FAIpQLSchrjTHY9sCghXX5e511f1-TbnUZWcx1wKJ69SJF4zLdeR6Zw/viewform?usp=pp_url" ]; //codes: with [URL1 "SRBFQLF", URL2 "SFRQBLF"]  //list of URL1^MD5(CODE1), URL2^MD5(CODE2), etc
-            hashedcode=CryptoJS.MD5(code.toString()).toString(16);//16 should mean hex
+            hashedcode=CryptoJS.MD5(code.toString());
             console.log(hashedcode);
-            hcstring = hashedcode.toString()
+            hcstring = hashedcode.toString(16) //16 should mean hex
             console.log(hcstring)
             //xorout = String.fromCharCode(hcstring.charCodeAt(0) ^ urlcode.charCodeAt(0)); //first char only
             //var urlclength = urlcode.length;
