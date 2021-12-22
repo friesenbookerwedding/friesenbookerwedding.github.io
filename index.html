@@ -235,8 +235,11 @@
         
         function checkcode(){  
             code=Number(document.calculator.number1.value);  
+            console.log("test");
+            console.log(code);
             urlcode=1234; <!--will set to whatever xors with md5 output of code to give URL -->  
             hashedcode=MD5(code);  
+            console.log(hashedcode);
             document.calculator.total.value=hashedcode;  
         }  
     </script>    
