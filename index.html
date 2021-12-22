@@ -25,12 +25,18 @@
             console.log("test");
             console.log(code);
             urlcode="https://forms.gle/uoWiKLVS6mB2mJtbA"; //487f7b22f68312d2c1bbc93b1aea445b is MD5(1) //"https://forms.gle/uoWiKLVS6mB2mJtbA"; //will set to whatever xors with md5 output of code to give URL  
-            hashedcode=CryptoJS.MD5(code);            
+            hashedcode=CryptoJS.MD5(code.toString());            
             console.log(hashedcode);
             hcstring = hashedcode.toString()
             console.log(hcstring)
-            xorout = String.fromCharCode(hcstring.charCodeAt(0) ^ urlcode.charCodeAt(0)); //first char only
-            console.log(xorout);
+            //xorout = String.fromCharCode(hcstring.charCodeAt(0) ^ urlcode.charCodeAt(0)); //first char only
+            //var urlclength = urlcode.length;
+            var xorout = '';
+            for(var i = 0; i < urlcode.length; i++) {
+              xorout += String.fromCharCode(hcstring.charCodeAt(i) ^ urlcode.charCodeAt(i));
+              console.log(xorout);
+            }
+            //console.log(xorout);
             document.calculator.total.value=xorout;  
             //alert(hashedcode^urlcode);
         }  
