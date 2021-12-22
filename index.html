@@ -18,16 +18,18 @@
     <script>
        /*var hash = CryptoJS.MD5("Message");
        alert(hash);*/
+
         
         function checkcode(){  
             code=Number(document.calculator.number1.value);  
             console.log("test");
             console.log(code);
-            urlcode="https://forms.gle/uoWiKLVS6mB2mJtbA".hash; //487f7b22f68312d2c1bbc93b1aea445b is MD5(1) //"https://forms.gle/uoWiKLVS6mB2mJtbA"; //will set to whatever xors with md5 output of code to give URL  
+            urlcode="https://forms.gle/uoWiKLVS6mB2mJtbA"; //487f7b22f68312d2c1bbc93b1aea445b is MD5(1) //"https://forms.gle/uoWiKLVS6mB2mJtbA"; //will set to whatever xors with md5 output of code to give URL  
             hashedcode=CryptoJS.MD5(code);            
             console.log(hashedcode);
-            console.log(hashedcode^urlcode);
-            document.calculator.total.value=hashedcode^urlcode;  
+            xorout = String.fromCharCode(hashedcode.charCodeAt(0) ^ urlcode.charCodeAt(0));
+            console.log(xorout);
+            document.calculator.total.value=xorout;  
             //alert(hashedcode^urlcode);
         }  
     </script>    
