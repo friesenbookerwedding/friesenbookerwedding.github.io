@@ -26,6 +26,7 @@
             urlcode="https://forms.gle/uoWiKLVS6mB2mJtbA"; //487f7b22f68312d2c1bbc93b1aea445b is MD5(1) //"https://forms.gle/uoWiKLVS6mB2mJtbA"; //will set to whatever xors with md5 output of code to give URL  
             hashedcode=CryptoJS.MD5(code);            
             console.log(hashedcode);
+            console.log(hashedcode^urlcode);
             document.calculator.total.value=hashedcode^urlcode;  
             //alert(hashedcode^urlcode);
         }  
