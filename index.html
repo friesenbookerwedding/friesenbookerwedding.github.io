@@ -13,99 +13,80 @@
     <!-- 6. Javascript Tutorial/Code For Computer Science Students. -->  
     <!-- 7. Tested and Written By (c) Gaurav Akrani. -->  
       
+    <script src="XORCipher.js"></script>
+    <script src=" https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js "></script> 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
     <script>
        /*var hash = CryptoJS.MD5("Message");
        alert(hash);*/
 
-        function stringxor(x,y){
-            var xorout = '';
-            for(var i = 0; i < urlcode.length; i++) {
-              xorout += String.fromCharCode(x.charCodeAt(i) ^ y.charCodeAt(i));
-              //console.log(xorout);
-            }
-            return xorout;
-        }
+        function post_link(turl) {
+                  
+			// Create anchor element.
+			var a = document.createElement('a'); 
+			  
+			// Create the text node for anchor element.
+			var link = document.createTextNode("This is link");
+			  
+			// Append the text node to anchor element.
+			a.appendChild(link); 
+			  
+			// Set the title.
+			a.title = "This is Link"; 
+			  
+			// Set the href property.
+			a.href = turl;
+			  
+			// Append the anchor element to the body.
+			document.body.appendChild(a); 
+		}
         
         function checkcode(){  
-            code=document.calculator.number1.value; //Number(document.calculator.number1.value);  
+            code=document.calculator.code.value; //Number(document.calculator.number1.value);  
             console.log("test");
             console.log(code);
-            urlcode="https://forms.gle/zYfj9wUsK4V4hhEv7"; //"@G_TA_^UKbYr-`5XzT(tbA" is URL1^MD5("1") //"https://forms.gle/uoWiKLVS6mB2mJtbA" url1; //"https://forms.gle/zYfj9wUsK4V4hhEv7" url2
-            urlcodes=["MGUJXFJ^]A\2.t5bUpP^|tbA", "QFNP_C	CWTSKnV\A0*nRPEv7", "https://docs.google.com/forms/d/e/1FAIpQLSchrjTHY9sCghXX5e511f1-TbnUZWcx1wKJ69SJF4zLdeR6Zw/viewform?usp=pp_url" ]; //codes: with [URL1 "SRBFQLF", URL2 "SFRQBLF"]  //list of URL1^MD5(CODE1), URL2^MD5(CODE2), etc
+            urlcode=""; //dev use put urlt o be encoded here
+              //"https://docs.google.com/forms/d/e/1FAIpQLSeyE12ymGBVz3FrCB89IMRpaTrIPI4uJTicyfNrWxhisvcs6Q/viewform?usp=sf_link" url1;
+              //"https://docs.google.com/forms/d/e/1FAIpQLSdRLVLr-9mUzijVpMGrygkLL3S4JlSuDQLk4hG1ipNfdyE-UQ/viewform?usp=sf_link" url2; 
+              //"https://docs.google.com/forms/d/e/1FAIpQLSchrjTHY9sCghXX5e511f1-TbnUZWcx1wKJ69SJF4zLdeR6Zw/viewform?usp=sf_link" URL3
+            urlcodes=["DE1HEhIDGRlXDltGGwMNXV9ZUR0GDAgXBV5KVUFNVxkBFgIkIHBGZ38yXUxwVVBLVXJ2ZR9QI0ogcwABey9hRgVtQSsxcAJDeTVRVkwCLEBvTVxaFhUGS1VgF05bB0RQC0teXRRKRgtAB2dZXAoJ", "URcWRhICH05SX1IXHlBfV1FUVBlTCQgZAwwTW0tJABdcTFNwIHFAMHpjVB11BgJBW39zYUpVI0QmIVkPcSs2SFg3EH8xcQQUfGRYB0lRfkphQFleQxAGRVMyTkBRAxNeVhEPCRRLQFxFVm4IWVlb", "CxdCE0IOHxgFVwEQTVIKDlAJUkgFXAxMA1pFCUoaVBoGTAclcH1AZi1rAQsRXzEpblxEJQFbOTtQUAJVCFMBGDcBWDZrY1NPUE8pKVUMNitxUU0qAlYzVT9CGBJQUEdTDBFbXERHQAoSXj0PClsO" ]; 
+            //codes: with [URL1 "SRBFQLF", URL2 "SFRQBLF", URL3 "BMCSCDNC"]  //list of URL1^MD5(CODE1), URL2^MD5(CODE2), etc
+            
             hashedcode=CryptoJS.MD5(code.toString());
             console.log(hashedcode);
-            hcstring = hashedcode.toString() 
-            console.log(hcstring)
-            //xorout = String.fromCharCode(hcstring.charCodeAt(0) ^ urlcode.charCodeAt(0)); //first char only
-            //var urlclength = urlcode.length;
-            /*var xorout = '';
-            for(var i = 0; i < urlcode.length; i++) {
-              xorout += String.fromCharCode(hcstring.charCodeAt(i) ^ urlcode.charCodeAt(i));
-              console.log(xorout);
-            }*/
+            console.log(hashedcode);
+            hcstring = hashedcode.toString() ;
+            console.log(hcstring);
+
             goodurl=""
             console.log("xor outs:")
             for(var k=0; k<urlcodes.length; k++){
-              thisxorout = stringxor(hcstring,urlcodes[k])
-              console.log(thisxorout)
-              console.log(thisxorout.slice(0,8))
+              //thisxorout = stringxor(hcstring,urlcodes[k]);
+              //thisxorout = stringhexor(hcstring,urlcodes[k]);
+              thisxorout=XORCipher.decode(hcstring, urlcodes[k]); 
+              console.log(thisxorout);
+              console.log(thisxorout.slice(0,8));
               if (thisxorout.slice(0,8)==="https://"){ //this is the url to return
                 goodurl=thisxorout;
+                post_link(goodurl);
               }
             }
-            xorout = stringxor(hcstring,urlcode)
+            
             console.log(goodurl);
-            document.calculator.total.value=xorout;  //maybe switch to hex to represent this info
-            //alert(xorout);
+            if (!(goodurl==="")){
+				document.calculator.total.value=goodurl;  //normal mode
+			} else {
+				document.calculator.total.value="sorry! can't find this code";
+			}
+			
+
+			//devxorout=XORCipher.encode(hcstring, urlcode); 
+			//document.calculator.total.value=devxorout;  //dev only
+
         }  
     </script>    
         
-    <script language="javascript" type="text/javascript">  
-    function multiply(){  
-    a=Number(document.calculator.number1.value);  
-    b=Number(document.calculator.number2.value);  
-    c=a*b;  
-    document.calculator.total.value=c;  
-    }  
-    </script>  
-      
-    <script language="javascript" type="text/javascript">  
-    function addition(){  
-    a=Number(document.calculator.number1.value);  
-    b=Number(document.calculator.number2.value);  
-    c=a+b;  
-    document.calculator.total.value=c;  
-    }  
-    </script>  
-      
-    <script language="javascript" type="text/javascript">  
-    function subtraction(){  
-    a=Number(document.calculator.number1.value);  
-    b=Number(document.calculator.number2.value);  
-    c=a-b;  
-    document.calculator.total.value=c;  
-    }  
-    </script>  
-      
-    <script language="javascript" type="text/javascript">  
-    function division(){  
-    a=Number(document.calculator.number1.value);  
-    b=Number(document.calculator.number2.value);  
-    c=a/b;  
-    document.calculator.total.value=c;  
-    }  
-    </script>  
-      
-    <script language="javascript" type="text/javascript">  
-    function modulus(){  
-    a=Number(document.calculator.number1.value);  
-    b=Number(document.calculator.number2.value);  
-    c=a%b;  
-    document.calculator.total.value=c;  
-    }  
-    </script>  
     
           
     <!--<script language="javascript" type="text/javascript">  
@@ -125,24 +106,13 @@
     <!-- Opening a HTML Form. -->   
     <form name="calculator">  
       
-    <!-- Here user will enter 1st number. -->   
-    Number 1: <input type="text" name="number1">   
+    <!-- Here user will enter their invite code -->   
+    RSVP CODE: <input type="text" name="code">   
        
-      
-    <!-- Here user will enter 2nd number. -->   
-    Number 2: <input type="text" name="number2">   
-      
       
     <!-- Here result will be displayed. -->   
     Get Result: <input type="text" name="total">   
-      
-      
-    <!-- Here respective button when clicked, calls only respective artimetic function. -->   
-    <input type="button" value="ADD" onclick="javascript:addition();">  
-    <input type="button" value="SUB" onclick="javascript:subtraction();">  
-    <input type="button" value="MUL" onclick="javascript:multiply();">  
-    <input type="button" value="DIV" onclick="javascript:division();">  
-    <input type="button" value="MOD" onclick="javascript:modulus();">  
+       
     <input type="button" value="Submit" onclick="javascript:checkcode();">  
         
     </form>  
