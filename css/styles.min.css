@@ -46,9 +46,9 @@ h5 {
 }
 .btn:hover,
 .btn:focus {
- color:#fff;
- border-color:#fff6f6;
- background-color:#fff6f6
+ color:#0;
+ border-color:#0;
+ background-color:#fff
 }
 .btn-white {
  font-size:13px;
