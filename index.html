@@ -1,121 +1,579 @@
-    <html>  
-      
-    <head>  
-      
-    <title>Simple Javascript Calculator - Basic Arithmetic Operations</title>  
-      
-    <!-- Aim: Write HTML Code Using JavaScript Functions To Perform Basic Arithmetic Operations. -->  
-    <!-- 1. Take Two numbers from user say 'Number 1' and 'Number 2'. -->  
-    <!-- 2. Perform Addition, Subtraction, Multiplication, Division and Modulus. -->  
-    <!-- 3. Result must be displayed on same HTML Page when respective button is clicked. -->  
-    <!-- 4. Use <input> tag (HTML Forms Concept) with onclick.-->  
-    <!-- 5. Call individual Javascript Function, put them inside <head> tag only.-->  
-    <!-- 6. Javascript Tutorial/Code For Computer Science Students. -->  
-    <!-- 7. Tested and Written By (c) Gaurav Akrani. -->  
-      
-    <script src="XORCipher.js"></script>
-    <script src=" https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js "></script> 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
-    <script>
-       /*var hash = CryptoJS.MD5("Message");
-       alert(hash);*/
+<!doctype html>
+<!--[if lt IE 7]>
+<html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if IE 7]>
+<html class="no-js lt-ie9 lt-ie8" lang="en"> <![endif]-->
+<!--[if IE 8]>
+<html class="no-js lt-ie9" lang="en"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>Sydney and Forrest's Wedding</title>
+    <meta name="description" content="Our wedding's online presence.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
+    <meta property="og:title" content="Sydney and Forrest's Wedding">
+    <meta property="og:description" content="Our wedding's online presence.">
+    <!--<meta property="og:image" content="https://wedding.ramswaroop.me/img/hero-min.jpg">-->
+    <meta property="og:image" content="img/shuttle_map.png">
+    <meta property="og:type" content="website">
+    <link rel="apple-touch-icon" sizes="256x256" href="favicon-256x256.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="manifest.json">
+    <link rel="mask-icon" href="safari-pinned-tab.svg" color="#5bbad5">
+    <link rel="stylesheet" href="css/normalize.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/jquery.fancybox.css">
+    <link rel="stylesheet" href="css/flexslider.css">
+    <link rel="stylesheet" href="css/styles.min.css">
+    <link rel="stylesheet" href="css/queries.css">
+    <link rel="stylesheet" href="node_modules/animate.css/animate.min.css">
+    <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+</head>
+<body id="top">
+<!--[if lt IE 8]>
+<p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade
+    your browser</a> to improve your experience.</p>
+<![endif]-->
+<section class="hero">
+    <section class="navigation">
+        <header>
+            <div class="header-content">
+                <div class="logo"><a href="#"><img src="favicon-256x256.png" alt="Logo"></a></div>
+                <div class="header-nav">
+                    <nav>
+                        <ul class="primary-nav">
+                            <li><a href="#intro">Welcome</a></li>
+                            <li><a href="#Timeline">Timeline</a></li>
+                            <li><a href="#Hotels">Hotels & Durham</a></li>
+                            <li><a href="#Photos">Wedding Photos</a></li>
+                            <li><a href="#eng-pics">Other Photos</a></li>
+                            <li><a href="#registry">Registry</a></li>
 
-        function post_link(turl) {
-                  
-			// Create anchor element.
-			var a = document.createElement('a'); 
-			  
-			// Create the text node for anchor element.
-			var link = document.createTextNode("This is link");
-			  
-			// Append the text node to anchor element.
-			a.appendChild(link); 
-			  
-			// Set the title.
-			a.title = "This is Link"; 
-			  
-			// Set the href property.
-			a.href = turl;
-			  
-			// Append the anchor element to the body.
-			document.body.appendChild(a); 
-		}
+                        </ul>
+                        <ul class="member-actions">
+                            <li><a href="#map" class="login">Venue</a></li>
+                            <li><a href="#rsvp" class="btn-white btn-small">RSVP</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="navicon">
+                    <a class="nav-toggle" href="#"><span></span></a>
+                </div>
+            </div>
+        </header>
+    </section>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+                <div class="hero-content text-center">
+                    <h1>Sydney and Forrest</h1>
+<!--			
+                    <img src="favicon-256x256.png">
+-->
+                    <!--<p class="intro">Ram & Antara are getting hitched!</p>-->
+                    <!--<a href="#" class="btn btn-fill btn-large btn-margin-right">Scroll Down</a> -->
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-4 hidden-xs"></div>
+            <div class="col-sm-4 hidden-xs text-center"><a href="#rsvp"
+                                                           class="btn btn-accent btn-large rsvp-btn">RSVP</a></div>
+            <div class="col-sm-4 hidden-xs"></div>
+        </div>
+    </div>
+    <div class="down-arrow floating-arrow"><a href="#invitation"><i class="fa fa-angle-down"></i></a></div>
+</section>
+
+<section id="invitation" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>We are getting married</h3>
+                <!--<p>The dates are 27<sup>th</sup> & 28<sup>th</sup> of November '17 and we would like you to be a part of
+                    it.</p>-->
+                <!--<div class="share-bar"></div>-->
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="intro">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Welcome</h3>
+            </div>
+        </div>
+        <div class="row">
+			<p>
+                Welcome friends and family! We're very excited to invite you to help us begin the rest of our lives together and nucleate our new family unit.
+            </p>
+<!--
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/IMG_2317.jpg" class="wp1"></div>
+            <div class="col-md-6">
+
+            </div>
+            <div class="col-md-3 hidden-sm hidden-xs"><img src="img/DSD_0214.jpg" class="wp2"></div>
+-->
+        </div>
+<!--
+        <div class="row">
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/IMG_2317.jpg" class="wp8"></div>
+            <div class="col-sm-4 col-sm-push-2 col-xs-6 hidden-md hidden-lg"><img src="img/DSD_0214.jpg" class="wp9"></div>
+        </div>
+-->
+    </div>
+</section>
+
+<section id="Hotels">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Hotels and Things to do in Durham</h3>
+            </div>
+        </div>
+        <div class="row">
+			<h4>We have room blocks in place for the following hotels (near CCB plaza downtown):</h4>
+			<ul> 
+				<li>Durham Mariott Center</li>
+				<li>The Durham</li>
+				<li>Hilton Garden Inn</li>
+			</ul>
+
+            <h4>These hotels are also reccommended:</h4>
+			<ul> 
+				<li>University Inn</li>
+			</ul>
+            <h4>Things to do in Durham</h4>
+            <ul> 
+				<li>Duke West Campus (Chapel, Cameron Indoor)</li>
+				<li>The rest of Duke Gardens </li>
+				<li>Nasher Art Museum</li>
+				<li>Museum of Life and Science</li>
+				<li>Hiking at the Eno River State Park</li>
+			</ul>
+			<h4>Food Suggestions</h4>
+			<ul>
+				<li>Foster’s</li>
+				<li>Elmo’s </li>
+				<li>Monuts</li>
+				<li>Farmer’s Market </li>
+				<li>Mkoko</li>
+				<li>Pizzeria Toro</li>
+				<li>Happy & Hale</li>
+				<li>International Delights</li>
+				<li>QShack</li>
+				<li>NuvoTaco</li>
+				<li>Picnic</li>
+				<li>Durham Food Hall</li>
+            </ul>
+            
+            <h4>Join us for a drink on April 15</h4>
+            <p>If you are in town the evening before the wedding, feel free to join us at Parts and Labor.</p>
+
+        </div>
+
+    </div>
+</section>
+
+
+
+<section class="Timeline section-padding" id="Timeline">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <center><h3 class="header">Wedding Timeline</h3></center>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-6 col-sm-12 col-xs-12 leftcol">
+                <div class="wp3">
+                    <p><strong>16th April</strong></p>
+
+                    <h5>Pre-Ceremony Shuttles <span class="time">5:05PM-5:45PM</span></h5>
+                    <p>Shuttles will circulate between the Doris Duke center and the downtown pickup location before the ceremony. 
+                    Parking spaces are also available at the Gardens. </p>
+                </div>
+                <div class="wp5">
+                    <h5>Ceremony <span class="time">6PM</span></h5>
+                    <p>The ceremony will begin promptly at 6PM. All of those in attendance will act as our officiants. 
+                    A coctail hour will follow as the wedding party scramble to take photos while the sun sets. Please remember to sign our wedding certificate with the provided pen before the end of the evening.</p>
+                </div>
+            </div>
+            <div class="col-md-6 col-sm-12 col-xs-12 rightcol">
+                <div class="wp4">
+                    <!-- <p><strong>28th November</strong></p> -->
+
+                    <h5>Reception <span class="time">7:30PM-Midnight</span></h5>
+                    <p>The reception will be indoor/outdoor. We will all eat under a big tent, and the dance floor will be inside.
+                    It's open bar! Please take advantage of the shuttles or ride sharing services. 
+                    More details to follow in the program.
+                    </p>
+                </div>
+                <div class="wp6">
+                    <h5>Shuttles <span class="time">9:30PM-Midnight</span></h5>
+                    <p>Shuttles will circulate between the Doris Duke center and the downtown pickup location. </p>
+                </div>
+            </div>
+        </div>
+        <div class="row section-padding">
+            <div class="col-md-4 col-md-offset-4 text-center">
+                <a class="btn btn-accent btn-small" data-toggle="modal" data-target="#dc-modal">
+                    <i class="fa fa-barcode"></i>&nbsp;&nbsp;Dress code
+                </a>
+            </div>
+        </div>
+        <!--<div class="row">
+            <div class="col-xs-12 section-border section-padding">
+            </div>
+        </div>-->
+    </div>
+
+    <div id="dc-modal" class="modal fade" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span>&times;</span>
+                    </button>
+                    <h3 class="text-center section-padding">What does semi-formal mean?</h3>
+                    <p>
+                        <strong>Semi-Formal</strong>
+                        <br>
+                        Suits and cocktail dresses or gowns are typical. A tie and blazer is also fine in lieu of a suit.
+                    </p>
+                    <p>
+                        <strong>For People Wearing Heels</strong>
+                        <br>
+                        Be advised that there may be some walking on grass and gravel paths, and there are uneven stone surfaces in the dining area. 
+                        Block heels are reccommended. 
+                    </p>
+                </div>
+            </div><!-- /.modal-content -->
+        </div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+
+</section>
+
+
+<section id="map" class="section-padding">
+    <div class="text-center">
+        <h3>The Sarah P. Duke Gardens</h3>
+        <p>420 Anderson St., Durham, NC 27705 </p>
+		<p> <a href="https://gardens.duke.edu/directions">Directions</a> </p>
+		<p>Please see the shuttle schedule to the downtown hotel pickup area. Parking is also available at the gardens.</p>
+
         
-        function checkcode(){  
-            code=document.calculator.code.value; //Number(document.calculator.number1.value);  
-            console.log("test");
-            console.log(code);
-            urlcode=""; //dev use put urlt o be encoded here
-              //"https://docs.google.com/forms/d/e/1FAIpQLSeyE12ymGBVz3FrCB89IMRpaTrIPI4uJTicyfNrWxhisvcs6Q/viewform?usp=sf_link" url1;
-              //"https://docs.google.com/forms/d/e/1FAIpQLSdRLVLr-9mUzijVpMGrygkLL3S4JlSuDQLk4hG1ipNfdyE-UQ/viewform?usp=sf_link" url2; 
-              //"https://docs.google.com/forms/d/e/1FAIpQLSchrjTHY9sCghXX5e511f1-TbnUZWcx1wKJ69SJF4zLdeR6Zw/viewform?usp=sf_link" URL3
-            urlcodes=["DE1HEhIDGRlXDltGGwMNXV9ZUR0GDAgXBV5KVUFNVxkBFgIkIHBGZ38yXUxwVVBLVXJ2ZR9QI0ogcwABey9hRgVtQSsxcAJDeTVRVkwCLEBvTVxaFhUGS1VgF05bB0RQC0teXRRKRgtAB2dZXAoJ", "URcWRhICH05SX1IXHlBfV1FUVBlTCQgZAwwTW0tJABdcTFNwIHFAMHpjVB11BgJBW39zYUpVI0QmIVkPcSs2SFg3EH8xcQQUfGRYB0lRfkphQFleQxAGRVMyTkBRAxNeVhEPCRRLQFxFVm4IWVlb", "CxdCE0IOHxgFVwEQTVIKDlAJUkgFXAxMA1pFCUoaVBoGTAclcH1AZi1rAQsRXzEpblxEJQFbOTtQUAJVCFMBGDcBWDZrY1NPUE8pKVUMNitxUU0qAlYzVT9CGBJQUEdTDBFbXERHQAoSXj0PClsO" ]; 
-            //codes: with [URL1 "SRBFQLF", URL2 "SFRQBLF", URL3 "BMCSCDNC"]  //list of URL1^MD5(CODE1), URL2^MD5(CODE2), etc
-            
-            hashedcode=CryptoJS.MD5(code.toString());
-            console.log(hashedcode);
-            console.log(hashedcode);
-            hcstring = hashedcode.toString() ;
-            console.log(hcstring);
+    </div>
+        
+    <div class="container-fluid">
 
-            goodurl=""
-            console.log("xor outs:")
-            for(var k=0; k<urlcodes.length; k++){
-              //thisxorout = stringxor(hcstring,urlcodes[k]);
-              //thisxorout = stringhexor(hcstring,urlcodes[k]);
-              thisxorout=XORCipher.decode(hcstring, urlcodes[k]); 
-              console.log(thisxorout);
-              console.log(thisxorout.slice(0,8));
-              if (thisxorout.slice(0,8)==="https://"){ //this is the url to return
-                goodurl=thisxorout;
-                post_link(goodurl);
-              }
-            }
-            
-            console.log(goodurl);
-            if (!(goodurl==="")){
-				document.calculator.total.value=goodurl;  //normal mode
-			} else {
-				document.calculator.total.value="sorry! can't find this code";
-			}
+        <div class="row">
+<!--
+            <div class="col-md-2">
+				<a class="fancybox" rel="group" href="img/shuttle_map.png">
+					<div class="img-wrap">
+						<div class="overlay">
+							<i class="fa fa-search"></i>
+						</div>
+						<img src="img/shuttle_map_sm.png" alt=""/>
+					</div>
+				</a>
+			</div>
+            <div class="col-md-2">
+				<a class="fancybox" rel="group" href="gardens.jpg">
+					<div class="img-wrap">
+						<div class="overlay">
+							<i class="fa fa-search"></i>
+						</div>
+						<img src="gardens_sm.jpg" alt=""/>
+					</div>
+				</a>
+			</div>
+-->	
+			<div class="col-md-6">
+				<a class="fancybox" rel="group" href="img/shuttle_map.png">
+					<div class="img-wrap">
+						<div class="overlay">
+							<i class="fa fa-search"></i>
+						</div>
+						<img src="img/shuttle_map_sm.png" alt=""/>
+					</div>
+				</a>  
+			</div>   
 			
+			<div class="col-md-2">
+				<a class="fancybox" rel="group" href="BCC_MAP.png">
+					<div class="img-wrap">
+						<div class="overlay">
+							<i class="fa fa-search"></i>
+						</div>
+						<img src="BCC_MAP_sm.png" alt=""/>
+					</div>
+				</a>
+			</div>
+			
+		
+        </div>
 
-			//devxorout=XORCipher.encode(hcstring, urlcode); 
-			//document.calculator.total.value=devxorout;  //dev only
+    </div>
+    <div class="container">
+        <div class="row hidden-lg hidden-md hidden-xs">
+            <div class="col-xs-12 section-border section-padding"></div>
+        </div>
+    </div>
+ 
+</section>
 
-        }  
-    </script>    
-        
+<section id="Photos" class="section-padding">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3>Wedding Photos</h3>
+                <p>We will post wedding photos here after the event. Please return for updates!</p>
+                <h3>Help us capture the moment, send us your reception photos here:</h3>
+                <p>FriesenBookerWedding@gmail.com</p>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+
+<section class="rsvp text-center section-padding" id="rsvp">
+	<div class="text-center">
+        <h3>RSVP Here</h3>
+        <p>Please RSVP by Feb 15 2022</p>
+
+    </div>
     
-          
-    <!--<script language="javascript" type="text/javascript">  
-    function checkcode(){  
-    code=Number(document.calculator.number1.value);  
-    urlcode=1234; 
-    hashedcode=MD5(code);  
-    document.calculator.total.value=hashedcode;  
-    }  
-    </script>  -->
-        
-        
-    </head>  
-      
-    <body>  
-      
-    <!-- Opening a HTML Form. -->   
-    <form name="calculator">  
-      
-    <!-- Here user will enter their invite code -->   
-    RSVP CODE: <input type="text" name="code">   
-       
-      
-    <!-- Here result will be displayed. -->   
+	<form name="calculator">  
+    <center>
+	<p>  
+    Invite code:
+    <input type="text" name="code"> 
+    </p>
+
+    
+<!--
+    <p>
     Get Result: <input type="text" name="total">   
-       
-    <input type="button" value="Submit" onclick="javascript:checkcode();">  
-        
+    </p>
+-->
+    <input type="checkbox" id="vaccine" name="vaccine" value="yes">
+	<label for="vaccine">My guests and I will be fully vaccinated per CDC guidelines</label><br>
+   
+    <input type="button" value="Submit" onclick="javascript:checkcode();">         
+    </center> 
     </form>  
-      
-    </body>  
-    </html>  
+</section>
+
+
+
+
+<section id="eng-pics" class="section-padding">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Some photos from the last five years</h3>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_0605_cropped.JPG">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_0605_cropped.JPG" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_20200411_153337_lg.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_20200411_153337_sm.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_2865_cropped.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_2865_cropped.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_1926.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_1926.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_1865_cropped.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_1865_cropped.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_1015_levels.JPG">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_1015_levels.JPG" alt=""/>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-2">
+                <a class="fancybox" rel="group" href="img/eng_pics/IMG_20210910_111210_levels.jpg">
+                    <div class="img-wrap">
+                        <div class="overlay">
+                            <i class="fa fa-search"></i>
+                        </div>
+                        <img src="img/eng_pics/IMG_20210910_111210_levels_sm.jpg" alt=""/>
+                    </div>
+                </a>
+            </div>
+            
+        </div>
+    </div>
+    <div class="container">
+        <div class="row hidden-lg hidden-md hidden-xs">
+            <div class="col-xs-12 section-border section-padding"></div>
+        </div>
+    </div>
+
+</section>
+
+
+
+<section id="registry" class=section-padding>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 text-center">
+                <h3 class="header">Registry</h3>
+            </div>
+        </div>
+        <div class="row">
+			<h4>We have set up registries at the links below:</h4>
+			<ul> 
+				<li>Honeymoon Fund</li>
+				<li>Physical items 1</li>
+				<li>Physical items 2</li>
+			</ul>
+
+        </div>
+
+    </div>
+</section>
+
+
+	
+
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-12 text-center content">
+                <span class="to-top-wrapper"><a href="#top" class="to-top"><i class="fa fa-angle-up"></i></a></span>
+                <p>Sydney and Forrest 2021</p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+<script src="js/jquery.fancybox.pack.js"></script>
+<script src="js/vendor/bootstrap.min.js"></script>
+<script src="js/jquery.flexslider-min.js"></script>
+<script src="node_modules/waypoints/lib/jquery.waypoints.min.js"></script>
+<script src="js/vendor/ouical.js"></script>
+<!--
+<script src="js/scripts.min.js"></script>
+-->
+<script src="js/scripts.js"></script>
+
+<script src="XORCipher.js"></script>
+<script src=" https://cdn.jsdelivr.net/npm/underscore@1.13.2/underscore-umd-min.js "></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/4.0.0/core.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/crypto-js/3.1.9-1/md5.js"></script>
+    
+<script>
+function post_link(turl) {
+                  
+	  
+	// Append the anchor element to the body.
+	//document.body.appendChild(a); 
+	document.write("<br><center>"); 
+	document.write( 'RSVP LINK'.link(turl)); 
+	document.write("</center>"); 
+}
+	
+function checkcode(){  
+	code=document.calculator.code.value; //Number(document.calculator.number1.value);  
+	const vac = document.getElementById('vaccine').checked;
+	//vaccinated=document.calculator.vaccine.value; 
+	console.log(vac);
+	if (vac==false) {
+		alert("Vaccination status not set.")
+		return
+	}
+	console.log("test");
+	console.log(code);
+	urlcode=""; //dev use put url to be encoded here
+	urlcodes=["DE1HEhIDGRlXDltGGwMNXV9ZUR0GDAgXBV5KVUFNVxkBFgIkIHBGZ38yXUxwVVBLVXJ2ZR9QI0ogcwABey9hRgVtQSsxcAJDeTVRVkwCLEBvTVxaFhUGS1VgF05bB0RQC0teXRRKRgtAB2dZXAoJ", "URcWRhICH05SX1IXHlBfV1FUVBlTCQgZAwwTW0tJABdcTFNwIHFAMHpjVB11BgJBW39zYUpVI0QmIVkPcSs2SFg3EH8xcQQUfGRYB0lRfkphQFleQxAGRVMyTkBRAxNeVhEPCRRLQFxFVm4IWVlb", "CxdCE0IOHxgFVwEQTVIKDlAJUkgFXAxMA1pFCUoaVBoGTAclcH1AZi1rAQsRXzEpblxEJQFbOTtQUAJVCFMBGDcBWDZrY1NPUE8pKVUMNitxUU0qAlYzVT9CGBJQUEdTDBFbXERHQAoSXj0PClsO" ]; 
+	//codes: with [URL1 "SRBFQLF", URL2 "SFRQBLF", URL3 "BMCSCDNC"]  
+	
+	hashedcode=CryptoJS.MD5(code.toString());
+	console.log(hashedcode);
+	console.log(hashedcode);
+	hcstring = hashedcode.toString() ;
+	console.log(hcstring);
+
+	goodurl=""
+	console.log("xor outs:")
+	for(var k=0; k<urlcodes.length; k++){
+	  //thisxorout = stringxor(hcstring,urlcodes[k]);
+	  //thisxorout = stringhexor(hcstring,urlcodes[k]);
+	  thisxorout=XORCipher.decode(hcstring, urlcodes[k]); 
+	  console.log(thisxorout);
+	  console.log(thisxorout.slice(0,8));
+	  if (thisxorout.slice(0,8)==="https://"){ //this is the url to return
+		goodurl=thisxorout;
+		post_link(goodurl);
+	  }
+	}
+	
+	console.log(goodurl);
+	if (goodurl===""){
+		alert("Not recognized. Please note that invite codes are case sensitive.")
+	} else {
+		//document.calculator.total.value=goodurl;  //dev only
+	}
+	
+} 
+</script>
+    
+
+</body>
+</html>
