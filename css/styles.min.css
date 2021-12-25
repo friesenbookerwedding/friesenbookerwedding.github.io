@@ -138,6 +138,7 @@ body {
 ul,
 ol {
  margin:0;
+ margin-left:20px;
  padding:0
 }
 ul li {
