@@ -4,10 +4,11 @@
 p {
  font-size:15px;
  line-height:29px;
- color:rgba(28,
+ /*color:rgba(28,
  54,
  83,
- 0.9);
+ 0.9);*/
+ color:#5A6D6D;
  padding-bottom:20px
 }
 h1 {
@@ -19,7 +20,8 @@ h2 {
  color:#3D4351
 }
 h3 {
- color:#3D4351;
+ /*color:#3D4351;*/
+ color:#223434;
  font-size:18px;
  font-weight:700;
  text-transform:uppercase;
@@ -31,7 +33,8 @@ h4 {
 }
 h5 {
  font-size:15px;
- color:#3D4351;
+ /*color:#3D4351;*/
+ color:#5A6D6D;
  text-transform:uppercase;
  font-weight:700
 }
@@ -112,7 +115,10 @@ section.blog {
 }
 a {
  /*color:#e8ca6f; RSVP button center in hero*/
- color:#000;
+ /*color:#000;*/
+ /*color:#640d50;*/
+ color:#789178;
+ text-decoration: underline;
  -webkit-transition-timing-function:ease;
  transition-timing-function:ease;
  -webkit-transition-duration:200ms;
@@ -128,7 +134,8 @@ a:focus {
 body {
  font-family:"Open Sans",sans-serif;
  font-weight:400;
- color:rgba(28,54,83,0.9);
+ /*color:rgba(28,54,83,0.9);*/
+ color:#5A6D6D;
  -webkit-text-size-adjust:100%;
  background-color: #fff6f6
 }
@@ -379,14 +386,14 @@ section .header {
 }
 .navigation {
  transition:all 300ms ease-in-out;
- background-color:rgba(55,36,40,0.5);
+ background-color:rgba(77,80,77,0.5);
  position:fixed;
  width:100%;
  z-index:999
 }
 .fixed {
  position:fixed;
- background-color:rgba(55,36,40,0.88);
+ background-color:rgba(77,80,77,0.88);
  z-index:999;
  width:100%
 }
