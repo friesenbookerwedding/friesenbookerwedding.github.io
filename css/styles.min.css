@@ -340,7 +340,7 @@ section .header {
  transform:rotate(45deg)
 }
 .nav-toggle.active span:after {
- top:10px;
+ /*top:10px;*/
  -moz-transform:translatey(-10px) rotate(-45deg);
  -ms-transform:translatey(-10px) rotate(-45deg);
  -o-transform:translatey(-10px) rotate(-45deg);
@@ -398,7 +398,7 @@ section .header {
  width:100%
 }
 header {
- padding:50px 0;
+ padding:20px 0;
  border-bottom:solid 1px rgba(255,255,255,0.2);
  position:relative;
  width:1170px;
@@ -420,7 +420,7 @@ header .logo img {
  height:19px
 }
 header ul.primary-nav {
- margin:0 0 0 75px;
+ margin:0 0 0 20px;
  padding:0
 }
 header ul.primary-nav li {
@@ -451,7 +451,7 @@ header .header-nav {
 header .member-actions {
  position:absolute;
  right:0;
- top:41px;
+ top:12px;
  transition:all 300ms ease-in-out
 }
 .down-arrow {
