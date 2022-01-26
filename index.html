@@ -515,7 +515,7 @@
         <div class="row">
 			<h4>We have set up funds and registries at the links below:</h4>
 			<ul> 
-				<li>Honeymoon Fund: (coming soon) CashApp, Zelle, or mail us a check</li>
+				<li>Honeymoon Fund: (coming soon) CashApp, Zelle (friesenbookerwedding@gmail.com), or mail us a check</li>
 				<!--<li><a href="https://www.target.com/gift-registry/gift/bookerfriesenregistry">Target Registry</a></li>-->
 				<li>Physical items 2</li>
 			</ul>
@@ -578,27 +578,37 @@ function checkcode(){
 	}
 	console.log("test");
 	console.log(code);
-	urlcode=""; //dev use put url to be encoded here
-	urlcodes=["DE1HEhIDGRlXDltGGwMNXV9ZUR0GDAgXBV5KVUFNVxkBFgIkIHBGZ38yXUxwVVBLVXJ2ZR9QI0ogcwABey9hRgVtQSsxcAJDeTVRVkwCLEBvTVxaFhUGS1VgF05bB0RQC0teXRRKRgtAB2dZXAoJ", "URcWRhICH05SX1IXHlBfV1FUVBlTCQgZAwwTW0tJABdcTFNwIHFAMHpjVB11BgJBW39zYUpVI0QmIVkPcSs2SFg3EH8xcQQUfGRYB0lRfkphQFleQxAGRVMyTkBRAxNeVhEPCRRLQFxFVm4IWVlb", "CxdCE0IOHxgFVwEQTVIKDlAJUkgFXAxMA1pFCUoaVBoGTAclcH1AZi1rAQsRXzEpblxEJQFbOTtQUAJVCFMBGDcBWDZrY1NPUE8pKVUMNitxUU0qAlYzVT9CGBJQUEdTDBFbXERHQAoSXj0PClsO" ]; 
+	//urlcodes=["DE1HEhIDGRlXDltGGwMNXV9ZUR0GDAgXBV5KVUFNVxkBFgIkIHBGZ38yXUxwVVBLVXJ2ZR9QI0ogcwABey9hRgVtQSsxcAJDeTVRVkwCLEBvTVxaFhUGS1VgF05bB0RQC0teXRRKRgtAB2dZXAoJ", "URcWRhICH05SX1IXHlBfV1FUVBlTCQgZAwwTW0tJABdcTFNwIHFAMHpjVB11BgJBW39zYUpVI0QmIVkPcSs2SFg3EH8xcQQUfGRYB0lRfkphQFleQxAGRVMyTkBRAxNeVhEPCRRLQFxFVm4IWVlb", "CxdCE0IOHxgFVwEQTVIKDlAJUkgFXAxMA1pFCUoaVBoGTAclcH1AZi1rAQsRXzEpblxEJQFbOTtQUAJVCFMBGDcBWDZrY1NPUE8pKVUMNitxUU0qAlYzVT9CGBJQUEdTDBFbXERHQAoSXj0PClsO" ]; 	
+	urlcodes=["DE1HEhIDGRlXDltGGwMNXV9ZUR0GDAgXBV5KVUFNVxkBFgIkIHBGZ38yXUxwVVBLVXJ2ZR9QI0ogcwABey9hRgVtQSsxcAJDeTVRVkwCLEBvTVxaFhUGS1VgF05bB0RQC0teXRRKRgtAB2dZXAoJ", "X0NERRAOHR8BC1tKHwZYW19YUx8HXAsfUgkUWhIYXBtSGAFzIn1CYSk3XGt9N3tGFQ1bZB5aDGZEKyFFGFBTeHsEYwEpWGFFITV0UgUJcAVRRHhXAEojHWE3SUEIUk9SWEVdChZHQg0WAmdVWA9c", "CxdCE0IOHxgFVwEQTVIKDlAJUkgFXAxMA1pFCUoaVBoGTAclcH1AZi1rAQsRXzEpblxEJQFbOTtQUAJVCFMBGDcBWDZrY1NPUE8pKVUMNitxUU0qAlYzVT9CGBJQUEdTDBFbXERHQAoSXj0PClsO" ]; 
 	//codes: with [URL1 "SRBFQLF", URL2 "SFRQBLF", URL3 "BMCSCDNC"]  
+	//codes: with [URL1 "SRBFQLF", URL2 "UHDBWGA", URL3 "BMCSCDNC"]  
 	
 	hashedcode=CryptoJS.MD5(code.toString());
 	console.log(hashedcode);
 	console.log(hashedcode);
 	hcstring = hashedcode.toString() ;
 	console.log(hcstring);
+	
+	urlcode=""; //dev use put url to be encoded here
+	//devxorout=XORCipher.encode(hcstring, urlcode); 
+	//console.log("devxorout:");
+	//console.log(devxorout);
 
 	goodurl=""
 	console.log("xor outs:")
 	for(var k=0; k<urlcodes.length; k++){
 	  //thisxorout = stringxor(hcstring,urlcodes[k]);
 	  //thisxorout = stringhexor(hcstring,urlcodes[k]);
+	  console.log(k);
 	  thisxorout=XORCipher.decode(hcstring, urlcodes[k]); 
 	  console.log(thisxorout);
-	  console.log(thisxorout.slice(0,8));
-	  if (thisxorout.slice(0,8)==="https://"){ //this is the url to return
+	  console.log(thisxorout.slice(0,30));
+	  if (thisxorout.slice(0,30)==="https://docs.google.com/forms/"){ //this is the url to return
 		goodurl=thisxorout;
 		post_link(goodurl);
+		console.log("GOOD URL:");
+		console.log(goodurl);
+		break
 	  }
 	}
 	
@@ -608,6 +618,8 @@ function checkcode(){
 	} else {
 		//document.calculator.total.value=goodurl;  //dev only
 	}
+	
+
 	
 } 
 </script>
